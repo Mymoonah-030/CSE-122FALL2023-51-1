@@ -1,0 +1,17 @@
+#include<iostream>
+#include<conio.h>
+using namespace std;
+int main()
+{
+    int a, b, i, n;
+    cin>>a>>b;
+    for(i=1; i<=n; i++)
+    {
+        a*=3;
+        b*=2;
+        if(a>b)
+            break;
+    }
+    cout<<i;
+    getch();
+}
