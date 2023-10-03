@@ -1,0 +1,18 @@
+#include<iostream>
+#include<conio.h>
+using namespace std;
+int main()
+{
+    int k, n, w, d, i, sum=0;
+    cin>>k>>n>>w;
+    for(i=0; i<=w; i++)
+    {
+        sum+=i;
+    }
+    d=(sum*k)-n;
+    if(d<0)
+        cout<<"0";
+    else
+        cout<<d;
+    getch();
+}
