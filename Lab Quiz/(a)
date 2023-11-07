@@ -1,0 +1,61 @@
+#include <iostream>
+#include <cstring>
+
+class Array {
+private:
+    int intArray[100];
+    char charArray[100];
+    int intSize;
+    int charSize;
+
+public:
+    Array() {
+        intSize = 0;
+        charSize = 0;
+    }
+
+    void insert(int index, int value) {
+        if (index >= 0 && index <= intSize) {
+            for (int i = intSize; i > index; i--) {
+                intArray[i] = intArray[i - 1];
+            }
+            intArray[index] = value;
+            intSize++;
+        }
+    }
+
+    void insert(int index, char value) {
+        if (index >= 0 && index <= charSize) {
+            for (int i = charSize; i > index; i--) {
+                charArray[i] = charArray[i - 1];
+            }
+            charArray[index] = value;
+            charSize++;
+        }
+    }
+
+    void display() {
+        std::cout << "Integer Array: ";
+        for (int i = 0; i < intSize; i++) {
+            std::cout << intArray[i] << " ";
+        }
+        std::cout << std::endl;
+
+        std::cout << "Character Array: ";
+        for (int i = 0; i < charSize; i++) {
+            std::cout << charArray[i] << " ";
+        }
+        std::cout << std::endl;
+    }
+};
+
+int main() {
+    Array arr;
+    arr.insert(0, 42);
+    arr.insert(1, 'A');
+    arr.insert(0, 99);
+    arr.insert(2, 'B');
+    arr.display();
+
+    return 0;
+}
